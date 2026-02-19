@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('description');
-            $table->integer('ISBN');
+            $table->bigInteger('ISBN');
             $table->integer('copias_totales');
             $table->integer('copias_disponibles');
             $table->boolean('disponible');
