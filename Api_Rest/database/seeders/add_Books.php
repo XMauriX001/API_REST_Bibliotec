@@ -14,7 +14,7 @@ class add_Books extends Seeder
      */
     public function run(): void
     {
-        DB::table('books')->insert(
+        DB::table('books')->insert([
             [
                 'title' => 'Don Quijote de la Mancha',
                 'description' => 'Aventuras de un caballero loco',
@@ -70,7 +70,31 @@ class add_Books extends Seeder
                 'copias_totales' => 3,
                 'copias_disponibles' => 3,
                 'disponible' => true,
-            ]
-        );
+            ],
+            [
+                'title' => 'El Gran Gatsby',
+                'description' => 'El sueño americano en los años 20',
+                'ISBN' => 9788467036411,
+                'copias_totales' => 4,
+                'copias_disponibles' => 4,
+                'disponible' => true,
+            ],
+            [
+                'title' => 'Rayuela',
+                'description' => 'Novela experimental en los años 20',
+                'ISBN' => 9788420431321,
+                'copias_totales' => 2,
+                'copias_disponibles' => 2,
+                'disponible' => true,
+            ],
+            [
+                'title' => 'Hamlet',
+                'description' => 'Tragedia de venganza y duda',
+                'ISBN' => 9788437600123,
+                'copias_totales' => 5,
+                'copias_disponibles' => 5,
+                'disponible' => true,
+            ],
+        ]);
     }
 }
