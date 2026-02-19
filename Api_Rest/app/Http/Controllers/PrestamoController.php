@@ -14,10 +14,13 @@ class PrestamoController extends Controller
     */
     public function index(Request $request)
     {
-        // Hacer el prestamo con el id del libro
+        //Efectuar el prestamo con el id del libro y añadirlo a loans
         $book = Book::find($request->input('book_id'));
-        $book->disponible = false;
-        $book->save();
+        $book->loans()->create([
+            'nombre_solicitante' => $request->input('nombre_solicitante'),
+            'due_date' => $request->input('due_date'),
+            'return_date' => $request->input('return_date'),
+        ]);
         return response()->json(['message' => 'Prestamo realizado correctamente'], 200);
     }
 }

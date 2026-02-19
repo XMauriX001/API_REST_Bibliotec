@@ -22,8 +22,7 @@ class BookRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required',
-            'isbn' => ['required', 'max:13'],
+            'book_id' => 'required',
         ];
     }
 }
